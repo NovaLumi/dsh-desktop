@@ -79,8 +79,8 @@ npm run dist
 ```yaml
 publish:
   provider: github
-  owner: <你的GitHub用户名>
-  repo: <你的仓库名>
+  owner: NovaLumi
+  repo: dsh-desktop
 ```
 
 ### 第二步：推送代码至 GitHub
@@ -89,7 +89,7 @@ git init
 git add .
 git commit -m "feat: initial commit for DeepSeek Harness Desktop"
 git branch -M main
-git remote add origin https://github.com/<你的GitHub用户名>/<你的仓库名>.git
+git remote add origin https://github.com/NovaLumi/dsh-desktop.git
 git push -u origin main
 ```
 
