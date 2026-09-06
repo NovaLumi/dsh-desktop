@@ -15,7 +15,7 @@
   2. **桌面壳自身更新**：基于 GitHub Releases 自动化检测升级，支持差量下载与重启应用。
 - ⚓ **系统托盘集成**：支持托盘常驻、快速唤醒主界面、一键重启 DSH 服务、快速打开 `$DSH_HOME` 配置目录。
 - 🔒 **单例锁保护**：防止用户重复双击启动多个实例导致端口抢占。
-- 📦 **自动化 CI/CD**：内置 GitHub Actions，打 Tag 即自动跨平台打包产出 Windows 安装包 (`.exe`)、便携解压版 (`.zip`)、macOS (`.dmg`) 和 Linux (`.AppImage`)。
+- 📦 **自动化 CI/CD**：内置 GitHub Actions，打 Tag 即自动跨平台打包产出 Windows 安装包 (`.exe`)、macOS (`.dmg`) 和 Linux (`.AppImage`)。
 
 ---
 
@@ -65,7 +65,7 @@ npm start
 
 ### 3. 本地打包构建 (Windows)
 ```bash
-# 构建 Windows 安装包 (NSIS .exe) 与 便携免安装版 (.zip)
+# 构建 Windows 安装包 (NSIS .exe)
 npm run dist
 ```
 产物将输出在 `release/` 目录下。
