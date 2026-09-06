@@ -1,0 +1,33 @@
+{
+  "name": "dsh-desktop",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness Desktop - 双击即用、随启随停的 DSH 桌面客户端",
+  "main": "dist/main/index.js",
+  "author": "DeepSeek Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/dsh-desktop.git"
+  },
+  "scripts": {
+    "build:main": "tsc -p tsconfig.json",
+    "build": "npm run build:main",
+    "start": "electron .",
+    "dev": "tsc -p tsconfig.json --watch",
+    "dist": "npm run build && electron-builder --win",
+    "dist:all": "npm run build && electron-builder -mwl",
+    "release": "npm run build && electron-builder --publish always"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9",
+    "semver": "^7.6.3",
+    "tree-kill": "^1.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/semver": "^7.5.8",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.2"
+  }
+}

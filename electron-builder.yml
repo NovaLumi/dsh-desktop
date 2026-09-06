@@ -1,0 +1,50 @@
+appId: com.deepseek.harness.desktop
+productName: DeepSeek Harness
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - src/renderer/**/*
+  - package.json
+  - node_modules/**/*
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  icon: build/icon.ico
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: DeepSeek Harness
+
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.icns
+  category: public.app-category.developer-tools
+
+linux:
+  target:
+    - target: AppImage
+    - target: deb
+  icon: build/icon.png
+  category: Development
+
+publish:
+  provider: github
+  owner: your-username
+  repo: dsh-desktop
+  releaseType: release
