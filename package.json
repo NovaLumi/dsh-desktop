@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/dsh-desktop.git"
+    "url": "https://github.com/adongbai/dsh-desktop.git"
   },
   "scripts": {
     "build:main": "tsc -p tsconfig.json",

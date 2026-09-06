@@ -45,6 +45,6 @@ linux:
 
 publish:
   provider: github
-  owner: your-username
+  owner: adongbai
   repo: dsh-desktop
   releaseType: release
