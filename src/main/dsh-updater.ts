@@ -1,6 +1,7 @@
 import { exec, execSync } from 'child_process';
 import https from 'https';
 import semver from 'semver';
+import { DshProcessManager } from './dsh-process';
 
 export interface DshUpdateInfo {
   hasUpdate: boolean;
@@ -18,8 +19,10 @@ export class DshUpdater {
    * 获取本地安装的 DSH 版本，未安装返回 null
    */
   public static getLocalVersion(): string | null {
+    const env = DshProcessManager.getAugmentedEnv();
     try {
       const output = execSync('dsh -V', {
+        env,
         encoding: 'utf-8',
         stdio: ['ignore', 'pipe', 'ignore'],
         windowsHide: true,
@@ -119,9 +122,10 @@ export class DshUpdater {
   public static installOrUpgrade(onLog?: (data: string) => void): Promise<boolean> {
     return new Promise((resolve) => {
       const cmd = 'npm install -g @deepseek-ai/dsh@latest';
+      const env = DshProcessManager.getAugmentedEnv();
       onLog?.(`正在执行官方安装命令: ${cmd}`);
 
-      const proc = exec(cmd, { windowsHide: true });
+      const proc = exec(cmd, { env, windowsHide: true });
 
       proc.stdout?.on('data', (chunk) => onLog?.(chunk.toString()));
       proc.stderr?.on('data', (chunk) => onLog?.(chunk.toString()));
