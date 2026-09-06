@@ -24,6 +24,7 @@
     "tree-kill": "^1.2.2"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^22.10.2",
     "@types/semver": "^7.5.8",
     "electron": "^33.2.1",
