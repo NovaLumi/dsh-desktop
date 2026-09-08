@@ -23,6 +23,7 @@ nsis:
   createDesktopShortcut: always
   createStartMenuShortcut: true
   shortcutName: DeepSeek Harness
+  include: build/installer.nsh
 
 mac:
   target:
